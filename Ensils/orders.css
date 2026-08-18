@@ -1,0 +1,82 @@
+/* Orders Page Specific Styles */
+/* Header */
+header {
+  background: linear-gradient(135deg, var(--earth-brown-800), var(--earth-brown-600));
+  padding: 60px 20px;
+  text-align: center;
+  color: white;
+  box-shadow: var(--shadow-md);
+  margin-bottom: -40px;
+  position: relative;
+  overflow: hidden;
+}
+header h1 {
+  margin: 0;
+  font-size: 2.8rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  color: #fff;
+}
+header p {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.1rem;
+  margin-top: 10px;
+}
+
+/* Orders Table */
+.container {
+  max-width: 1100px;
+  margin: 40px auto;
+  background: var(--glass-bg);
+  backdrop-filter: blur(20px);
+  padding: 30px;
+  border-radius: 20px;
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--shadow-lg);
+  position: relative;
+  z-index: 2;
+}
+.orders-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+.orders-table th,
+.orders-table td {
+  padding: 16px;
+  text-align: center;
+  border-bottom: 1px solid var(--earth-brown-300);
+}
+.orders-table th {
+  background: var(--earth-brown-100);
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--earth-brown-900);
+  letter-spacing: 0.5px;
+}
+.orders-table tr:hover {
+  background: var(--earth-cream-100);
+}
+
+/* Order Status */
+.status {
+  padding: 8px 16px;
+  border-radius: 30px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: inline-block;
+  box-shadow: var(--shadow-sm);
+}
+.status.delivered {
+  background: #27ae60;
+  color: #fff;
+}
+.status.shipped {
+  background: #2980b9;
+  color: #fff;
+}
+.status.processing {
+  background: #f39c12;
+  color: #fff;
+}

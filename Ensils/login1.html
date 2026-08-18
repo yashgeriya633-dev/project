@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
+  <link rel="stylesheet" href="style1.css" />
+
+  <style>
+    .password-wrapper {
+      position: relative;
+    }
+
+    .password-wrapper input {
+      width: 100%;
+      padding-right: 60px; /* space for the toggle text */
+    }
+
+    .toggle-text {
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      cursor: pointer;
+      font-size: 14px;
+      color: #007BFF;
+      user-select: none;
+    }
+
+    .toggle-text:hover {
+      text-decoration: underline;
+    }
+  </style>
+
+  <script>
+    function validateInput(event) {
+      const input = document.querySelector('input[name="username"]').value.trim();
+      if (/^\d+$/.test(input) && input.length !== 10) {
+        alert("Phone number must be exactly 10 digits.");
+        event.preventDefault();
+      }
+    }
+
+    function togglePasswordVisibility() {
+      const password = document.getElementById("password");
+      const toggleText = document.getElementById("togglePasswordText");
+
+      if (password.type === "password") {
+        password.type = "text";
+        toggleText.textContent = "Hide";
+      } else {
+        password.type = "password";
+        toggleText.textContent = "Show";
+      }
+    }
+  </script>
+</head>
+<body>
+  <div class="login-container">
+    <form action="login.php" method="POST" class="login-form" onsubmit="validateInput(event)">
+      <h2>Welcome</h2>
+
+      <div class="input-group">
+        <input type="text" name="username" required />
+        <label>Username or Phone Number</label>
+      </div>
+
+      <div class="input-group password-wrapper">
+        <input type="password" name="password" id="password" required />
+        <label>Password</label>
+        <span class="toggle-text" id="togglePasswordText" onclick="togglePasswordVisibility()">Show</span>
+      </div>
+      <button type="submit">Login</button>
+
+      <center>
+        <h3>OR</h3>
+        <a href="signup.html"><button type="button">Signup</button></a><br>
+        <a href="forgot.php">Forgot password?</a>
+      </center>
+    </form>
+  </div>
+</body>
+</html>

@@ -1,0 +1,115 @@
+/* About Us Layout (Global styles inside theme.css and home.css) */
+
+/* Clay gradient header */
+header {
+    background: linear-gradient(135deg, var(--earth-brown-800), var(--earth-brown-600));
+    padding: 60px 20px;
+    text-align: center;
+    color: white;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+}
+header::before {
+    content: '';
+    position: absolute;
+    top: -50%; left: -50%; width: 200%; height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+    animation: rotateBg 15s linear infinite;
+}
+header h1 {
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    font-size: 3.5rem;
+    color: #fff;
+    position: relative;
+    z-index: 2;
+    animation: fadeInDown 1s ease forwards;
+}
+header p {
+    margin-top: 5px;
+    font-style: italic;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.container {
+    max-width: 1000px;
+    margin: auto;
+    padding: 40px 20px;
+    animation: slideUp 1.2s ease-in-out;
+}
+
+/* About text animation */
+.about-text {
+    line-height: 1.8;
+    font-size: 18px;
+    text-align: center;
+    margin-bottom: 50px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Quotes box with hover attraction */
+.quotes {
+    background: var(--earth-cream-50);
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: var(--shadow-sm);
+    border: 1px solid var(--earth-brown-300);
+    animation: fadeIn 1.8s ease-in-out;
+}
+.quote {
+    font-style: italic;
+    font-size: 22px;
+    margin-bottom: 20px;
+    font-family: 'Playfair Display', serif;
+    text-align: center;
+    color: var(--earth-brown-700);
+    transition: transform var(--transition-normal);
+}
+.quote:hover {
+    transform: translateY(-5px) scale(1.02);
+    color: var(--earth-brown-900);
+}
+
+/* Footer fade-in */
+footer {
+    margin-top: 50px;
+    background-color: #3e2f1c;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+    animation: fadeIn 2s ease-in-out;
+}
+
+/* Decorative heading line */
+h2 {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    position: relative;
+    margin-bottom: 25px;
+    transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+h2::after {
+    content: '';
+    width: 60px;
+    height: 3px;
+    background-color: #8b5a2b;
+    display: block;
+    margin: 10px auto 0;
+}
+h2:hover {
+    transform: scale(1.05);
+    text-shadow: 0 2px 6px rgba(139, 90, 43, 0.5);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
